@@ -25,7 +25,7 @@ end
 
 gem 'puppetlabs_spec_helper', '~> 2.0', :require => false
 gem 'rake', :require => false
-gem 'facter', ENV['FACTER_GEM_VERSION'], :require => false, :groups => [:test]
+gem 'facter', git: 'https://github.com/gimmyxd/facter.git', ref: 'FACT-2956', :require => false, :groups => [:test]
 
 puppetversion = ENV['PUPPET_VERSION'] || '~> 6.0'
 gem 'puppet', puppetversion, :require => false, :groups => [:test]
