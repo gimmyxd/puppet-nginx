@@ -27,59 +27,7 @@
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "9",
         "10"
-      ]
-    },
-    {
-      "operatingsystem": "OpenBSD"
-    },
-    {
-      "operatingsystem": "RedHat",
-      "operatingsystemrelease": [
-        "7"
-      ]
-    },
-    {
-      "operatingsystem": "CentOS",
-      "operatingsystemrelease": [
-        "7"
-      ]
-    },
-    {
-      "operatingsystem": "VirtuozzoLinux",
-      "operatingsystemrelease": [
-        "6",
-        "7"
-      ]
-    },
-    {
-      "operatingsystem": "SLES"
-    },
-    {
-      "operatingsystem": "Solaris"
-    },
-    {
-      "operatingsystem": "AIX"
-    },
-    {
-      "operatingsystem": "FreeBSD"
-    },
-    {
-      "operatingsystem": "DragonFly"
-    },
-    {
-      "operatingsystem": "NetBSD"
-    },
-    {
-      "operatingsystem": "Archlinux"
-    },
-    {
-      "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [
-        "16.04",
-        "18.04",
-        "20.04"
       ]
     }
   ]

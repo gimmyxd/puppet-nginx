@@ -20,10 +20,6 @@ jobs:
         with:
           ruby-version: '2.7'
           bundler-cache: true
-      - name: Run rake validate
-        run: bundle exec rake validate
-      - name: Run rake rubocop
-        run: bundle exec rake rubocop
       - name: Setup Test Matrix
         id: get-outputs
         run: bundle exec metadata2gha --use-fqdn --pidfile-workaround false
@@ -49,27 +45,3 @@ jobs:
           bundler-cache: true
       - name: Run tests
         run: bundle exec rake
-
-  acceptance:
-    needs: setup_matrix
-    runs-on: ubuntu-latest
-    env:
-      BUNDLE_WITHOUT: development:test:release
-    strategy:
-      fail-fast: false
-      matrix:
-        setfile: ${{fromJson(needs.setup_matrix.outputs.beaker_setfiles)}}
-        puppet: ${{fromJson(needs.setup_matrix.outputs.puppet_major_versions)}}
-    name: ${{ matrix.puppet.name }} - ${{ matrix.setfile.name }}
-    steps:
-      - uses: actions/checkout@v2
-      - name: Setup ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.7'
-          bundler-cache: true
-      - name: Run tests
-        run: bundle exec rake beaker
-        env:
-          BEAKER_PUPPET_COLLECTION: ${{ matrix.puppet.collection }}
-          BEAKER_setfile: ${{ matrix.setfile.value }}
